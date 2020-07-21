@@ -1,4 +1,16 @@
-$groupId = '38b22043-8dbc-4e66-96bd-5ef2eca7bbd7'
+<#
+Version: 1.0
+Author: Jay Williams
+Script: GetDeviceConfigsByGroupId.ps1
+Description:
+Uses Graph API to get all deviceConfigurations, creates objects from results, filters by groupId.  
+
+Assumes Graph auth access token variable is $Token. See https://www.thelazyadministrator.com/2019/07/22/connect-and-navigate-the-microsoft-graph-api-with-powershell/ for more details.
+
+The script is provided "AS IS" with no warranties.
+#>
+
+$groupId = 'GROUPID'
 
 $apiUrl = "https://graph.microsoft.com/beta/deviceManagement/deviceConfigurations?expand=assignments&top=999"
 
