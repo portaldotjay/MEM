@@ -51,7 +51,7 @@ for ($i = 0; $i -ile $deviceIds.Count; $i++) {
     }  
 
     $bodyJson = $body | ConvertTo-Json -Compress
-    $restPost = Invoke-RestMethod -Headers @{Authorization = "Bearer $($Token)"} -Uri $apiUrl -Method Post -Body "+$bodyJson+" -ContentType 'application/json'
+    $restPost = Invoke-RestMethod -Headers @{Authorization = "Bearer $($Token)"} -Uri $apiUrl -Method Post -Body $bodyJson -ContentType 'application/json'
     
     $i+=99
 
