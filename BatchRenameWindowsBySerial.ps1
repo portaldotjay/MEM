@@ -10,6 +10,8 @@ Permissions needed are DeviceManagementManagedDevices.Read.All and DeviceManagem
 Assumes Graph auth access token variable is $Token.
 
 The script is provided "AS IS" with no warranties.
+
+Thanks @AndrewJimenez_ for pointing me in the right direction for the loop. 
 #>
 
 $deviceName = "" #Can use {{rand:x}} or {{serialnumber}}
