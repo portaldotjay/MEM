@@ -17,21 +17,16 @@ $csvPath = Read-Host "Enter CSV Path"
 $groupTag = Read-Host "Enter Group Tag"
 $serialNumbers = Import-Csv -Path $csvPath
 
-$restResponses = @()
-$deviceIds = @()
-
 foreach ($serialNumber in $serialNumbers) {
     $apiUrl = "https://graph.microsoft.com/beta/deviceManagement/windowsAutopilotDeviceIdentities?filter=contains(serialNumber,'"+$serialNumber.Serial+"')"
     $restResponse = Invoke-RestMethod -Headers @{Authorization = "Bearer $($Token.AccessToken)"} -Uri $apiUrl -Method Get
-    $restResponses += @($restResponse)
-    
-}
-
-$deviceIds = $restResponses.value.id
-
-foreach ($deviceId in $deviceIds) {
+    $deviceId = $restResponse.value.id
     $apiUrl = "https://graph.microsoft.com/beta/deviceManagement/windowsAutopilotDeviceIdentities/$deviceId/UpdateDeviceProperties"
     $body = "{`"groupTag`":`"$groupTag`"}"
-    $restPost = Invoke-RestMethod -Headers @{Authorization = "Bearer $($Token.AccessToken)"} -Uri $apiUrl -Method Post -Body $body -ContentType 'application/json'
+    $postResponse = Invoke-WebRequest -Headers @{Authorization = "Bearer $($Token.AccessToken)"} -Uri $apiUrl -Method Post -Body $body -ContentType 'application/json'
+    if ($postResponse.statusCode -eq '200') {
+        Write-Host $serialNumber.serial"Successful"
+    } else {
+        Write-Host $serialNumber.serial"Unsuccessful"
+    }
 }
-
