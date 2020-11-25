@@ -7,6 +7,8 @@ Uses Graph API to retrieve details about Administrative Templates. $gpid variabl
 Example: The $gpid in this URL is "00000000-0000-0000-0000-00000000000"
 https://endpoint.microsoft.com/#blade/Microsoft_Intune_DeviceSettings/AdminTemplatesConfigurationMenu/properties/configurationId/00000000-0000-0000-0000-00000000000/configurationName/_beta_-EdgeConfig
 
+It will spit some errors trying to add some properties that don't exist. 
+
 Needs App Registration configured. Once that's done, add ClientId, TenantId, and RedirectUri to $token variable. 
 
 If you don't have MSAL module installed, you'll need to run "Install-Module -Name MSAL.PS" and follow the prompts. 
