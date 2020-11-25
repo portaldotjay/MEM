@@ -29,7 +29,7 @@ $i=0
 
 foreach ($object in $definitionValues.value) {
     $id = $object.id
-    $apiUrl = "https://graph.microsoft.com/beta/deviceManagement/groupPolicyConfigurations/8abac7d5-0993-4ccf-b37b-22505e11bd22/definitionValues/$id/presentationValues?expand=presentation"
+    $apiUrl = "https://graph.microsoft.com/beta/deviceManagement/groupPolicyConfigurations/$gpid/definitionValues/$id/presentationValues?expand=presentation"
     $presentationValues = Invoke-RestMethod -Headers @{Authorization = "Bearer $($Token.AccessToken)"} -Uri $apiUrl -Method Get
     $gpos += [PSCustomObject]@{
         id = $id
