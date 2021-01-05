@@ -1,7 +1,7 @@
 <#
 Version: 1.0
 Author: Jay Williams
-Script: GetSerialNubmersOfDevicesInGroup.ps1
+Script: GetSerialNumbersOfDevicesInGroup.ps1
 Description:
 Uses Graph API to get the deviceId of all devices in Group then get's managedDevice by filtering using deviceId. Stores all serials in $serialNumbers.
 Enter Group ID on line 22.
