@@ -1,0 +1,84 @@
+swagger: '2.0'
+info: {title: Autopilot Prestager, description: 'Custom Connector for Autopilot Prestager Power Automate', version: '1.0'}
+host: graph.microsoft.com
+basePath: /beta
+schemes: [https]
+consumes: []
+produces: []
+paths:
+  /deviceManagement/windowsAutopilotDeviceIdentities:
+    get:
+      responses:
+        default:
+          description: default
+          schema:
+            type: object
+            properties:
+              '@odata.context': {type: string, description: '@odata.context'}
+              '@odata.count': {type: integer, format: int32, description: '@odata.count'}
+              value:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id: {type: string, description: id, title: id}
+                    deploymentProfileAssignmentStatus: {type: string, description: deploymentProfileAssignmentStatus}
+                    deploymentProfileAssignmentDetailedStatus: {type: string, description: deploymentProfileAssignmentDetailedStatus}
+                    deploymentProfileAssignedDateTime: {type: string, description: deploymentProfileAssignedDateTime}
+                    orderIdentifier: {type: string, description: orderIdentifier}
+                    groupTag: {type: string, description: groupTag}
+                    purchaseOrderIdentifier: {type: string, description: purchaseOrderIdentifier}
+                    serialNumber: {type: string, description: serialNumber}
+                    productKey: {type: string, description: productKey}
+                    manufacturer: {type: string, description: manufacturer}
+                    model: {type: string, description: model}
+                    enrollmentState: {type: string, description: enrollmentState}
+                    lastContactedDateTime: {type: string, description: lastContactedDateTime}
+                    addressableUserName: {type: string, description: addressableUserName,
+                      title: addressableUserName}
+                    userPrincipalName: {type: string, description: userPrincipalName}
+                    resourceName: {type: string, description: resourceName}
+                    skuNumber: {type: string, description: skuNumber}
+                    systemFamily: {type: string, description: systemFamily}
+                    azureActiveDirectoryDeviceId: {type: string, description: azureActiveDirectoryDeviceId}
+                    managedDeviceId: {type: string, description: managedDeviceId}
+                    displayName: {type: string, description: displayName}
+                description: value
+          headers:
+            '{': {description: '{', type: string}
+            '"cache-control":': {description: '"cache-control":', type: string}
+            '"client-request-id":': {description: '"client-request-id":', type: string}
+            '"content-length":': {description: '"content-length":', type: string}
+            '"content-type":': {description: '"content-type":', type: string}
+            '"request-id":': {description: '"request-id":', type: string}
+            '}': {description: '}', type: string}
+      operationId: getSerial
+      parameters:
+      - {name: filter, in: query, required: false, type: string, default: 'contains(serialNumber,{serial})'}
+      summary: https://graph.microsoft.com/beta/deviceManagement/windowsAutopilotDeviceIdentities?filter=contains(serialNumber,{serial})
+      description: Filters windowsAutopilotDeviceIdentities by Serial
+  /deviceManagement/windowsAutopilotDeviceIdentities/{windowsAutopilotDeviceIdentityId}/updateDeviceProperties:
+    post:
+      responses:
+        default:
+          description: default
+          schema: {}
+      summary: https://graph.microsoft.com/beta/deviceManagement/windowsAutopilotDeviceIdentities/{windowsAutopilotDeviceIdentityId}/updateDeviceProperties
+      description: Posts Group Tag and Device Name
+      operationId: updateDeviceProperties
+      parameters:
+      - {name: windowsAutopilotDeviceIdentityId, in: path, required: true, type: string}
+      - name: body
+        in: body
+        required: false
+        schema:
+          type: object
+          properties:
+            groupTag: {type: string, description: groupTag}
+            displayName: {type: string, description: displayName}
+definitions: {}
+parameters: {}
+responses: {}
+securityDefinitions: {}
+security: []
+tags: []
