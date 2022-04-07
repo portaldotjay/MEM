@@ -53,8 +53,7 @@ your tenant called Microsoft Graph Powershell. In that Enterprise app, you can
 verify the permissions granted to the app as well as adjust the app settings to
 suit your organization’s needs.
 
-![Graphical user interface, text, application Description automatically
-generated](media/6c8f039f64a7f657d7fbfa83bd964142.png)
+![User Consent Prompt](https://github.com/portaldotjay/blob/blob/main/consentPrompt.png?raw=true)
 
 # Using the commands
 
