@@ -1,6 +1,6 @@
-Windows 11 Readiness PowerShell Module
+#Windows 11 Readiness PowerShell Module
 
-# Overview
+## Overview
 
 In order to help you prepare for your journey to Windows 11, we’ve developed a
 PowerShell module that returns the status of devices that are enrolled in
@@ -18,14 +18,14 @@ that have been changed to meet the drive requirements will be removed from the
 group, leaving behind devices that still don’t meet the drive requirements. This
 will help track progress throughout the project.
 
-# Installing the module
+## Installing the module
 
 The Win11Readiness module is published on www.PowerShellGallery.com. To install
 this module, use the command ‘Import-Module Win11Readiness -Scope CurrentUser’.
 If you have not added PowerShell Gallery as a trusted repository, you will be
 prompted to confirm the installation.
 
-# Permissions
+## Permissions
 
 For the module to access and modify groups in your tenant, permissions must be
 granted to the “application”. This module uses the well-known Microsoft.Graph
@@ -55,7 +55,7 @@ suit your organization’s needs.
 
 ![User Consent Prompt](https://github.com/portaldotjay/blob/blob/main/consentPrompt.png?raw=true)
 
-# Using the commands
+## Using the commands
 
 The command used is Get-Win11ReadinessStatus. The command ran alone will return
 the results of all devices in Intune and their statuses. There are three
@@ -72,7 +72,7 @@ group and use it’s ID prior to trying to add devices to it. This will also
 remove objects from the group that don’t match the status used. Please use care
 when using this switch.
 
-# Conclusion
+## Conclusion
 
 We believe that Windows 11 will help keep your organization and your users safe
 and secure while providing a more modern, yet familiar, user experience. We hope
