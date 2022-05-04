@@ -21,7 +21,7 @@ will help track progress throughout the project.
 ## Installing the module
 
 The Win11Readiness module is published on www.PowerShellGallery.com. To install
-this module, use the command ‘Import-Module Win11Readiness -Scope CurrentUser’.
+this module, use the command ‘Install-Module Win11Readiness -Scope CurrentUser’.
 If you have not added PowerShell Gallery as a trusted repository, you will be
 prompted to confirm the installation.
 
